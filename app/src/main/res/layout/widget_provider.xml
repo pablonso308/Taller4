@@ -16,4 +16,13 @@
         android:text="@string/appwidget_text"
         android:textSize="24sp"
         android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appwidget_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/update_button_text" />
 </RelativeLayout>

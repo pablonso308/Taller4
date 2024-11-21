@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import com.example.taller4.WidgetProvider.Companion.updateAppWidget
 import com.example.taller4.databinding.WidgetProviderConfigureBinding
 
 /**
