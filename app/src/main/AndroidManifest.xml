@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ScreenActivity"
+            android:exported="true"
+            android:label="Screen Activity"
+            android:theme="@style/Theme.Taller4" />
     </application>
 
 </manifest>
