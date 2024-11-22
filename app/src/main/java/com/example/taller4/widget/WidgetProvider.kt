@@ -1,4 +1,4 @@
-package com.example.taller4
+package com.example.taller4.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
+import com.example.taller4.R
 
 class WidgetProvider : AppWidgetProvider() {
     override fun onUpdate(
@@ -37,15 +38,17 @@ class WidgetProvider : AppWidgetProvider() {
             appWidgetManager: AppWidgetManager,
             appWidgetId: Int
         ) {
-            val widgetText = loadTitlePref(context, appWidgetId)
             val views = RemoteViews(context.packageName, R.layout.widget_provider)
-            views.setTextViewText(R.id.appwidget_text, widgetText)
+            val intent = Intent(context, WidgetService::class.java).apply {
+                putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
+            }
+            views.setRemoteAdapter(R.id.widget_list_view, intent)
 
-            val intent = Intent(context, WidgetProvider::class.java).apply {
+            val updateIntent = Intent(context, WidgetProvider::class.java).apply {
                 action = ACTION_UPDATE_WIDGET
                 putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
             }
-            val pendingIntent = PendingIntent.getBroadcast(context, appWidgetId, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+            val pendingIntent = PendingIntent.getBroadcast(context, appWidgetId, updateIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
             views.setOnClickPendingIntent(R.id.update_button, pendingIntent)
 
             appWidgetManager.updateAppWidget(appWidgetId, views)

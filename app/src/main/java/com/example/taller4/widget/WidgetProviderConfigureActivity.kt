@@ -1,4 +1,4 @@
-package com.example.taller4
+package com.example.taller4.widget
 
 import android.app.Activity
 import android.appwidget.AppWidgetManager
@@ -7,7 +7,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import com.example.taller4.WidgetProvider.Companion.updateAppWidget
+import com.example.taller4.R
+import com.example.taller4.widget.WidgetProvider.Companion.updateAppWidget
 import com.example.taller4.databinding.WidgetProviderConfigureBinding
 
 /**
@@ -68,7 +69,7 @@ class WidgetProviderConfigureActivity : Activity() {
 
 }
 
-private const val PREFS_NAME = "com.example.taller4.WidgetProvider"
+private const val PREFS_NAME = "com.example.taller4.widget.WidgetProvider"
 private const val PREF_PREFIX_KEY = "appwidget_"
 
 // Write the prefix to the SharedPreferences object for this widget
