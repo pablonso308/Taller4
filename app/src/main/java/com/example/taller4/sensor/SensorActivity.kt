@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.LinearLayout
 import com.example.taller4.R
 
-abstract class SensorActivity : AppCompatActivity(), SensorEventListener {
+class SensorActivity : AppCompatActivity(), SensorEventListener {
 
     private lateinit var sensorManager: SensorManager
     private var accelerometer: Sensor? = null
@@ -55,4 +55,6 @@ abstract class SensorActivity : AppCompatActivity(), SensorEventListener {
         }
     }
 
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+    }
 }
