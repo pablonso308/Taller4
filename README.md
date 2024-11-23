@@ -1,7 +1,7 @@
 # Taller 4 - Android Application
 
 ## Descripción
-
+ link a mi repositorio:https://github.com/pablonso308/Taller4.git
 Este proyecto es una aplicación Android desarrollada como parte del Taller 4. Utiliza Kotlin como lenguaje de programación principal y sigue una arquitectura modular con soporte para widgets y actividades dinámicas.
 
 ## Características
